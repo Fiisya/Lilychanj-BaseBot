@@ -17,4 +17,5 @@ Install di Termux 👨‍💻:
 Thanks 🙏
 - Whiskeysocket/Baileys
 - Tanaka Sensei
+- Lepii (alfi)
 - Dll
