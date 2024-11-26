@@ -6,7 +6,7 @@ Install di Pannel ⚙️:
 
 Install di Termux 👨‍💻:
 1. pkg install git
-2. git clone https://github.com/tanakasenn/Lilychanj-BaseBot
+2. git clone https://github.com/Fiisya/Lilychanj-BaseBot
 3. cd Lilychanj-BaseBot 
 4. npm i
 5. npm start
