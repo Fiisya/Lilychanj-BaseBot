@@ -48,6 +48,8 @@ global.fii = '`'
 global.wm = " Lepii"
 global.urldb = ''; // kosongin aja
 global.idch = '120363208710632243@newsletter'
+global.linkch = "https://whatsapp.com/channel/0029VaGgcSa3bbV4dMm9Fe3B"
+global.web = 'https://alfixd.my.id'
 global.fotoRandom = [
     "https://endpoint.web.id/server/file/90zDkCDA914lq5K.jpg",
     "https://endpoint.web.id/server/file/KCqIkl0RvvA6WTGn.jpg",
