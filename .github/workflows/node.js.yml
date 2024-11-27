@@ -3,7 +3,7 @@ name: Git Clone, Unzip, Install, and Run
 on:
   push:
     branches:
-      - main  # Jalankan setiap ada push di branch 'main'
+      - main
 
 jobs:
   build:
@@ -15,24 +15,21 @@ jobs:
       run: |
         git clone https://github.com/Fiisya/Lilychanj-BaseBot.git
 
-    # Step 2: Navigate into the LilyWa directory
-    - name: Change directory to Lilychanj-BaseBot
-      run: cd Lilychanj-BaseBot
-
-    # Step 3: Unzip lilybot.zip file inside the LilyWa folder
+    # Step 2: Unzip lilybot.zip file inside the repository
     - name: Unzip Lilybot.zip
       run: |
-        sudo apt-get install unzip  # Install unzip tool if not already installed
-        unzip Fiisya/Lilychanj-BaseBot -d ./Lilychanj-BaseBot # Unzip Lilycbot.zip in the Lilychanj-BaseBot directory
+        sudo apt-get install -y unzip  # Install unzip tool if not already installed
+        unzip ./Lilychanj-BaseBot/lilybot.zip -d ./Lilychanj-BaseBot  # Adjust path to match the actual file location
 
-    # Step 4: Install npm dependencies
+    # Step 3: Install npm dependencies
     - name: Install npm dependencies
       run: |
         cd Lilychanj-BaseBot
         npm install
 
-    # Step 5: Start the npm application
+    # Step 4: Start the npm application
     - name: Start the application
       run: |
         cd Lilychanj-BaseBot
         npm start
+        
