@@ -20,10 +20,10 @@ jobs:
       run: cd Lilychanj-BaseBot
 
     # Step 3: Unzip lilybot.zip file inside the LilyWa folder
-    - name: Unzip Lilychanj-BaseBot.zip
+    - name: Unzip Lilybot.zip
       run: |
         sudo apt-get install unzip  # Install unzip tool if not already installed
-        unzip Fiisya/Lilychanj-BaseBot -d ./Lilychanj-BaseBot # Unzip Lilychanj-BaseBot.zip in the Lilychanj-BaseBot directory
+        unzip Fiisya/Lilychanj-BaseBot -d ./Lilychanj-BaseBot # Unzip Lilycbot.zip in the Lilychanj-BaseBot directory
 
     # Step 4: Install npm dependencies
     - name: Install npm dependencies
