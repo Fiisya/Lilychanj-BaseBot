@@ -7,7 +7,7 @@ Install di Pannel ⚙️:
 Install di Termux 👨‍💻:
 1. pkg install git
 2. git clone https://github.com/Fiisya/Risa-WaBot
-3. cd Lilychanj-BaseBot 
+3. cd Risa-WaBot 
 4. npm i
 5. npm start
 6. tinggal masukin aja pairing nya
