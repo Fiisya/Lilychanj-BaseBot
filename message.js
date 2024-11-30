@@ -4894,52 +4894,49 @@ return reply3(`Terjadi kesalahan saat mengakses URL: ${error.message}`);
 }}}
 break 
 
-case 'qc': {
-const quoteApi = require('@neoxr/quote-api')
-const { Sticker } = require('wa-sticker-formatter')
- if (!text) m.reply(`Example: ${prefix + command} halo`);
- let avatar = await Risa.profilePictureUrl(m.sender, 'image').catch(_ => 'https://i.ibb.co/2WzLyGk/profile.jpg')
+case 'qcxx': {
+    if (!q) return reply3('Enter Text');
+    const ppnyauser = await Risa.profilePictureUrl(m.sender, 'image').catch(_ => 'https://telegra.ph/file/6880771a42bad09dd6087.jpg');
+    const json = {
+        "type": "quote",
+        "format": "png",
+        "backgroundColor": "#FFFFFF",
+        "width": 512,
+        "height": 768,
+        "scale": 2,
+        "messages": [
+            {
+                "entities": [],
+                "avatar": true,
+                "from": {
+                    "id": 1,
+                    "name": pushname,
+                    "photo": {
+                        "url": ppnyauser
+                    }
+                },
+                "text": q,
+                "reply3Message": {}
+            }
+        ]
+    };
 
-const json = {
- "type": "quote",
- "format": "png",
- "backgroundColor": "#2E4053",
- "width": 512,
- "height": 768,
- "scale": 2,
- "messages": [
- {
- "entities": [],
- "avatar": true,
- "from": {
- "id": 1,
- "name": pushname,
- "photo": {
- "url": avatar
- }
- },
- "text": text,
- "replyMessage": {}
- }
- ]
+    const res = await axios.post('https://bot.lyo.su/quote/generate', json, {
+        headers: {'Content-Type': 'application/json'}
+    });
+    const buffer = Buffer.from(res.data.result.image, 'base64');
+    const rest = { 
+        status: "200", 
+        creator: "AdrianTzy",
+        result: buffer
+    };
+
+    Risa.sendImageAsSticker(m.chat, rest.result, m, {
+        packname: `${global.packname}`,
+        author: `${global.author}`
+    });
 }
-
-async function createSticker(req, url, packName, authorName, quality) {
- let stickerMetadata = {
- type: 'full',
- pack: packName,
- author: authorName,
- quality
- }
- return (new Sticker(req ? req : url, stickerMetadata)).toBuffer()
-}
-
-const res = await quoteApi(json)
-const buffer = Buffer.from(res.image, 'base64')
- let stiker = await createSticker(buffer, false, "Risa", "Fii")
- Risa.sendFile(m.chat, stiker, 'sticker.webp', '', m)
- }
- break
+break;
 
 case 'capcut': case 'facebook': case 'fb': case 'fbdl': case 'tt3': case 'ig2': case 'aio': {
  if (!text) return reply3(`Enter the link!!!`);
