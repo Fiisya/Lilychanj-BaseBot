@@ -859,7 +859,7 @@ let jadwalanime = {
     tengah_malam: '23:00',
 }
 let hoh = await otakudesu.ongoing()
-let alpikk = `*[ ᴜᴘᴅᴀᴛᴇ ᴏɴɢᴏɪɴɢ ]* \n`
+let alpikk = `*[ ᴜᴘᴅᴀᴛᴇ ᴀɴɪᴍᴇ ᴏɴɢᴏɪɴɢ ]* \n`
 for (let i of hoh) {
 alpikk += `\n *[ ${i.title} | ${i.episode} ]* \n`
 alpikk += `Link: ${i.link}\n`
@@ -876,19 +876,19 @@ contextInfo: {
      forwardingScore: 99999,
     externalAdReply: {
       showAdAttribution: true,
-      title: 'Update Ongoing By: Risa',
+      title: 'Update Anime Ongoing',
       mediaType: 1,
       previewType: 1,
-      body: 'by: Risa',
+      body: 'Powered By Lepii',
       //previewType: "PHOTO",
-      thumbnailUrl: 'https://endpoint.web.id/server/file/izpR22PMfHe8L5YN.jpg',
+      thumbnailUrl: 'https://endpoint.web.id/server/file/FVlrQVk61UBMBuR.jpg',
       renderLargerThumbnail: true,
       mediaUrl: web,
       sourceUrl: web
      },
       forwardedNewsletterMessageInfo: {
       newsletterJid: idch,
-      newsletterName: `By : ${ownername}`,
+      newsletterName: `Powered By : ${ownername}`,
       serverMessageId: 143
     }
   }
