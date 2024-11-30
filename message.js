@@ -4920,7 +4920,7 @@ return reply3(`Terjadi kesalahan saat mengakses URL: ${error.message}`);
 }}}
 break 
 
-case 'qcxx': {
+case 'qcxx': case 'qc': {
     if (!q) return reply3('Enter Text');
     const ppnyauser = await Risa.profilePictureUrl(m.sender, 'image').catch(_ => 'https://telegra.ph/file/6880771a42bad09dd6087.jpg');
     const json = {
