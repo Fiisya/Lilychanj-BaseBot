@@ -1,5 +1,5 @@
 {
-  "name": "BASE RISA",
+  "name": "BASE LILY X RISA",
   "version": "0.0.1",
   "description": "Risa adalah sistem otomatis bot WhatsApp berbasis nodejs, yang dapat membantu anda untuk di WhatsApp",
   "main": "index.js",
@@ -66,6 +66,7 @@
     "pdfkit": "^0.15.0",
     "perf_hooks": "0.0.1",
     "performance-now": "^2.1.0",
+    "obfuscator-io-deobfuscator": "^1.0.4",
     "pino": "^8.14.1",
     "qrcode": "^1.5.3",
     "qrcode-reader": "^1.0.4",
