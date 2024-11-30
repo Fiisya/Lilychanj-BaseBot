@@ -6568,6 +6568,58 @@ case 'encryptv2':
     }, { quoted: m, caption: 'Suksess' });
 
     break;
+
+case 'playvideo': {
+if (!text || text.trim() === "") return reply3(`Contoh: ${prefix + command} sephia`);
+reply3(mess.wait);
+try {
+const axios = require("axios");
+async function getBuffer(url) {
+const res = await axios({
+method: 'get',
+url,
+responseType: 'arraybuffer'
+});
+return res.data;
+}
+const res = await axios.get(`https://Ikygantengbangetanjay-api.hf.space/yt?query=${encodeURIComponent(text)}`);
+const video = res.data.result;
+if (!video) return reply3('Video/Audio Tidak Ditemukan');
+if (video.duration.seconds >= 3600) {
+return reply3('Video is longer than 1 hour!');
+}
+const audioUrl = video.download.audio;
+const videoUrl = video.download.video;
+if (!audioUrl || !videoUrl) {
+return reply3("Gagal mendapatkan audio/video URL. Silakan coba lagi.");
+}
+const thumbBuffer = await getBuffer(video.thumbnail);
+await Risa.sendMessage(m.chat, {
+video: {
+url: videoUrl
+},
+mimetype: 'video/mp4',
+fileName: `${video.title}.mp4`,
+jpegThumbnail: thumbBuffer,
+caption: `🎥 *${video.title}*\n📽 *Source*: ${video.url}`
+}, {
+quoted: m
+});
+await Risa.sendMessage(m.chat, {
+audio: {
+url: audioUrl
+},
+mimetype: 'audio/mpeg',
+fileName: `${video.title}.mp3`,
+jpegThumbnail: thumbBuffer
+}, {
+quoted: m
+});
+} catch (error) {
+reply3(`*Error:* ${error.message}`);
+}
+};
+break
     
 case 'addcase': {
  if (!isCreator) return reply3('lu sapa asu')
